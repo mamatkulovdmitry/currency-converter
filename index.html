@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Currency Converter</title>
+        <link rel="stylesheet" href="./styles/reset.css">
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    </head>
+    <body>
+        <div class="container currency__container">
+            <h1>Currency Converter</h1>
+            <div class="fields">
+                <div class="field">
+                    <button id="base"></button>
+                    <input id="base-input" type="number" value="0" min="0" step="0.01">
+                </div>
+                <div class="field">
+                    <button id="target"></button>
+                    <input id="target-input" type="number" value="0" readonly>
+                </div>
+                <button class="swap-btn" id="swap-btn">
+                    <span>
+                        <i class="uil uil-exchange-alt"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="exchange-rate">
+                <h5>Exchange Rate</h5>
+                <span id="exchange-rate"></span>
+            </div>
+            <div class="drawer" id="drawer">
+                <div class="title">
+                    <button id="close-drawer">
+                        <i class="uil uil-arrow-left"></i>
+                    </button>
+                    <h3>Select Currency</h3>
+                </div>
+                <div class="search">
+                    <input id="search" type="search" placeholder="Search">
+                </div>
+                <ul class="currency-list" id="currency-list"></ul>
+            </div>
+        </div>
+        <script src="./scripts/index.js"></script>
+    </body>
+</html>

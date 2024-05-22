@@ -1,0 +1,277 @@
+/* ========== GOOGLE FONTS (Outfit) ========== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* ========== ROOT ========== */
+
+:root {
+    --container-width: 30rem;
+
+    --color-white: #F5F5F5;
+    --color-dark: #2E2E2E;
+    --color-accent: #FF6347;
+    --color-accent-dark: #FF4500;
+    --color-text: #333333;
+    --color-gray: #777777;
+    --input-background: rgba(255, 99, 71, 0.15);
+    --input-shadow: rgba(255, 99, 71, 0.35);
+    --input-border: #DDDDDD;
+    --shadow-1: rgba(0, 0, 0, 0.15);
+    --shadow-2: rgba(0, 0, 0, 0.10);
+    --color-background: #FFFFFF;
+
+    --transition-3: 0.3s;
+    --transition-6: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ========== DEFAULT HTML ========== */
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, var(--color-dark), var(--color-accent-dark));
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--color-accent-dark);
+}
+
+h5 {
+    text-transform: uppercase;
+    color: var(--color-accent-dark);
+}
+
+button {
+    border: none;
+    font-size: 1rem;
+    background: transparent;
+    cursor: pointer;
+}
+
+input {
+    font-family: "Outfit", sans-serif;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+/* ========== CURRENCY CONTAINER ========== */
+
+.currency__container {
+    position: relative;
+    display: grid;
+    gap: 1.875rem;
+    padding: 1.875rem;
+    background: var(--color-background);
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0.3125rem var(--shadow-1), 0 0.3125rem 0.625rem var(--shadow-2);
+    overflow: hidden;
+}
+
+/* ========== FIELDS ========== */
+
+.fields {
+    display: grid;
+    gap: 1.25rem;
+    position: relative;
+}
+
+.field {
+    display: flex;
+    background: var(--input-background);
+    box-shadow: inset 0 0 0.1875rem var(--input-shadow);
+    border-radius: 0.625rem;
+}
+
+.field button {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-weight: 600;
+    background: transparent;
+    margin-left: 1.25rem;
+    color: var(--color-dark);
+}
+
+.field button .currency-icon {
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 50%;
+    background: var(--image) center no-repeat;
+}
+
+.field button span {
+    flex-grow: 1;
+}
+
+.field i {
+    font-size: 1.5rem;
+    margin-left: auto;
+}
+
+.field button:hover {
+    color: var(--color-accent);
+}
+
+.field input {
+    font-size: 2.5rem;
+    text-align: end;
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0.625rem 1.25rem;
+}
+
+.field input::-webkit-inner-spin-button,
+.field input::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+/* ========== SWAP BUTTON ========== */
+
+.swap-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-white);
+    line-height: 1;
+    box-shadow: 0 0.1875rem 0.3125rem var(--shadow-1);
+    position: absolute;
+    top: 50%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
+    transition: var(--transition-3);
+}
+
+.swap-btn:hover {
+    background: var(--color-accent-dark);
+}
+
+.swap-btn span {
+    rotate: 90deg;
+    transition: inherit;
+}
+
+.swap-btn:hover span {
+    rotate: 270deg;
+}
+
+/* ========== EXCHANGE RATE ========== */
+
+.exchange-rate {
+    text-align: center;
+}
+
+.exchange-rate span {
+    margin-top: 0.625rem;
+    display: inline-block;
+    font-weight: 500;
+}
+
+/* ========== DRAWER ========== */
+
+.drawer {
+    position: absolute;
+    inset: 0;
+    background: var(--color-white);
+    padding: 1.25rem;
+    display: grid;
+    align-content: start;
+    gap: 1.25rem;
+    transform: translateY(100%);
+    transition: transform var(--transition-6);
+}
+
+.drawer.show {
+    transform: none;
+}
+
+/* ========== TITLE ========== */
+
+.title {
+    text-align: center;
+    position: relative;
+}
+
+.title button {
+    position: absolute;
+    top: 50%;
+    inset-inline-start: 0;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    background: transparent;
+    opacity: 0.5;
+}
+
+.title button:hover {
+    opacity: 1;
+}
+
+/* ========== SEARCH ========== */
+
+.search input {
+    width: 90%;
+    padding: 0.625rem 1.25rem;
+    border: 0.0625rem solid var(--input-border);
+    border-color: var(--color-accent-dark);
+}
+
+/* ========== CURRENCY LIST ========== */
+
+.currency-list {
+    overflow-y: auto;
+    max-height: 15rem;
+}
+
+.currency-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    cursor: pointer;
+    padding-block: 0.3125rem;
+    color: var(--color-dark);
+    transition: background var(--transition-3);
+}
+
+.currency-list li:hover {
+    background: var(--input-background);
+}
+
+.currency-list li:first-child {
+    padding-block-start: 0;
+}
+
+.currency-list *:not(li) {
+    pointer-events: none;
+}
